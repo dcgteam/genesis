@@ -1,0 +1,324 @@
+.wd-widget {
+    overflow: hidden;
+
+    .wd-header {
+        span.wd-icon {
+            display: inline-block;
+            display: none;
+        }
+
+        .wd-title {
+            display: inline-block;
+        }
+    }
+
+    &.wd-browsing-product-carousel,
+    &.wd-product-list,
+    &.wd-product-featured-list {
+        margin-top: 30px;
+
+        .wd-header {
+            padding: 15px;
+            padding-left: 0;
+            margin-bottom: 10px;
+            font-size: 2em;
+            position: relative;
+            border-bottom: 1px solid $gray-semilight;
+
+            .wd-icon {
+                &:before {
+                    @include aws-icon("\f054");
+                    font-size: 0.8em;
+                    color: $base-color;
+                }
+            }
+        }
+    }
+}
+
+.wd-browsing-breadcrumbs {
+    margin-bottom: 20px;
+
+    @media screen and(max-width: 991px) {
+        margin-bottom: 5px;
+    }
+
+    .location {
+        display: none;
+    }
+
+    li:not(.last) {
+        &:after {
+            @include aws-icon("\f105");
+            color: $gray-dark;
+            margin-left: 5px;
+        }
+
+        a {
+            color: $gray-dark;
+        }
+    }
+
+    li {
+        a {
+            margin-left: 4px;
+        }
+
+        a[href="/"] {
+            margin-left: 0;
+        }
+    }
+
+    .last {
+        strong {
+            font-weight: bold;
+        }
+    }
+}
+
+.wd-product-rating {
+    margin-bottom: 10px;
+
+    .rating-average {
+        background: url(/custom/content/themes/Base/Imagens/rating.png?nocache) !important;
+        background-repeat: no-repeat !important;
+        background-position: -109px 0 !important;
+        width: 105px !important;
+        background-size: cover !important;
+        height: 14px !important;
+
+        &.rate-1 {
+            background-position: -86px 0 !important;
+        }
+
+        &.rate-2 {
+            background-position: -65px 0 !important;
+        }
+
+        &.rate-3 {
+            background-position: -43px 0 !important;
+        }
+
+        &.rate-4 {
+            background-position: -20px 0 !important;
+        }
+
+        &.rate-5 {
+            background-position: 0px 0 !important;
+        }
+    }
+}
+
+/* carrossel de marcas */
+.wd-brand-carousel {
+    li {
+        width: auto;
+        margin: 0 10px 0 0;
+    }
+
+    .jcarousel-control-prev,
+    .jcarousel-control-next {
+        line-height: 60px;
+
+        &.inactive {
+            display: none;
+        }
+
+        i {
+            color: $gray;
+            font-size: 30px;
+            top: 15px;
+
+            &:hover {
+                color: $gray-25;
+            }
+        }
+    }
+}
+
+/* banners */
+.wd-marketing-banner {
+    height: auto !important;
+    line-height: 0 !important;
+    max-width: 100%;
+
+    .banner-wrapper,
+    a {
+        @include grid-media($grid-smartphone) {
+            max-width: 100%;
+            height: auto !important;
+        }
+    }
+
+    &.slider {
+        .slider-controller {
+            position: absolute;
+            right: 0 !important;
+            left: 0 !important;
+            bottom: 0;
+            top: unset;
+            display: block;
+            margin: 0;
+            padding: 0.5em 2em;
+            line-height: normal;
+            text-align: center;
+
+            @media screen and(max-width: 768px) {
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                bottom: 0 !important;
+            }
+
+            li {
+                font-size: 0.8rem;
+                float: none;
+                display: inline-block;
+                background: $font-light;
+                color: $gray-dark;
+                border: none;
+                height: 32px;
+                line-height: 32px;
+                width: 32px;
+                border-radius: 100%;
+                font-weight: 700;
+                box-shadow: none;
+
+                @include grid-media($grid-smartphone) {
+                    height: 20px;
+                    line-height: 20px;
+                    width: 20px;
+                }
+
+                &.current {
+                    background-color: $base-color;
+                    color: $font-light;
+                }
+            }
+        }
+
+    }
+
+    &:not(.menu-oferta) {
+
+        img {
+            max-width: 100%;
+            height: auto;
+
+            @include grid-media($grid-smartphone) {
+                width: 100%;
+            }
+        }
+    }
+
+    &.grid {
+        padding: 0;
+        float: left;
+        margin-bottom: 20px;
+
+        @include grid-media($grid-m) {
+            max-width: 100%;
+
+            div {
+                text-align: center;
+            }
+        }
+
+        &:nth-child(2n) {
+            float: right;
+        }
+    }
+}
+
+@media screen and (max-width: 1079px) {
+    .wd-marketing-banner {
+
+        a,
+        .banner-wrapper {
+            text-align: center !important;
+        }
+    }
+}
+
+.grid-products {
+    #middle {
+        #content {
+            .wd-browsing-grid {
+                .wd-header {
+                    padding: 0;
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.wd-profile-login-oauth {
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 150px;
+
+    @media screen and(max-width: 991px) {
+        margin: 0;
+        height: 120px !important;
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+
+        .facebook-modal {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .loginTwitter {
+            margin: 0 auto;
+        }
+    }
+
+    .loginTwitter {
+        width: 166px;
+        height: 48px;
+        background: url(/custom/content/themes/Base/Imagens/oauth-tt.png?nocache);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .loginFacebook {
+        width: 166px;
+        height: 48px;
+        background: url(/custom/content/themes/Base/Imagens/oauth-fb.png?nocache);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+.loading-grid,
+.loading-menu {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    background: white;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: 99;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        background: url(/custom/content/themes/Base/Imagens/loading-cart.svg?nocache);
+        background-repeat: no-repeat;
+        display: block;
+        z-index: 999;
+        height: 50px;
+        width: 50px;
+        margin: 0 auto;
+        position: relative;
+        top: 45vh;
+    }
+}

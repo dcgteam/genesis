@@ -1,0 +1,34 @@
+.alert {
+	padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    display: block;
+    &.small {
+        padding: 5px;
+        font-size: 0.8em;
+    }
+    &.success {
+    	color: darken( $success, 40% );
+        background-color: $success;
+        border-color: darken( $success, 10% );
+        @include round(3px);
+    }
+    &.info {
+    	color: darken( $info, 40% );
+	    background-color: $info;
+	    border-color: darken( $info, 10% );
+        @include round(3px);
+    }
+    &.warning {
+    	color: darken( $warning, 60% );
+        background-color: $warning;
+        border-color: darken( $warning, 20% );
+        @include round(3px);
+    }
+    &.error {
+        color: darken( $danger, 40% );
+        background-color: $danger;
+        border-color: darken( $danger, 10% );
+        @include round(3px);
+    }
+}    

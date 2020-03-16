@@ -1,0 +1,497 @@
+#footer {
+    >.wrapper {
+        >div {
+            padding: 30px 0;
+            border-bottom: 1px solid $gray-medium;
+            overflow: hidden;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    border-top:0;
+    background: #F5F5F5;
+
+    h2 {
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    .footer-newsletter {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding: 35px 0 !important;
+
+        .content {
+            @media screen and (min-width: 992px) {
+                display: flex;
+                flex-direction: row;
+                padding: 0;
+            }
+
+            h2 {
+                font-size: 18px;
+                color: $gray-25;
+                font-weight: bold;
+                text-align: left;
+
+                small {
+                    margin-top: 0;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+            }
+        }
+
+        .wd-marketing-newsletter {
+            max-width: 500px;
+            margin: 0;
+            width: 100%;
+
+            .error-flyout {
+                span {
+                    &.error {
+                        max-width: 100% !important;
+                    }
+                }
+            }
+
+            form {
+                margin: 10px 0;
+            }
+
+            .wd-header,
+            .input-name-marketing-newsletter,
+            label,
+            p {
+                display: none;
+            }
+
+            .input-email-marketing-newsletter {
+                width: 67%;
+                float: left;
+
+                @include grid-media($grid-smartphone) {
+                    width: 70%;
+                }
+
+                input {
+                    @include round-right(0);
+                }
+            }
+
+            .input-button-marketing-newsletter {
+                float: left;
+                width: 33%;
+
+                @include grid-media($grid-smartphone) {
+                    width: 30%;
+                }
+
+                button {
+                    @extend .btn-wide;
+                    @include round-left(0);
+
+                    @media screen and (max-width: 991px) {
+                        padding: 14px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-atendimento {
+        .contato {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 30px 0 15px 0;
+            overflow: hidden;
+
+            >div {
+                @include grid-media($grid-smartphone) {
+                    text-align: center;
+                    margin: 15px 0;
+                }
+            }
+
+            i {
+                float: left;
+                font-size: 44px;
+                margin-right: 18px;
+
+                @include grid-media($grid-pp) {
+                    display: none;
+                }
+            }
+
+            strong {
+                display: block;
+                margin: 3px 0 5px 0;
+            }
+
+            a:not(.btn) {
+                font-size: 1em;
+            }
+
+            .phone {
+                a {
+                    color: $font-dark;
+                }
+            }
+        }
+
+        .horario {
+            color: $gray-dark;
+            text-align: center;
+        }
+    }
+
+    .content-center {
+        .col {
+            @media screen and(min-width: 992px) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .section-title {
+                font-size: 14px;
+                color: $gray-25;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .footer-category {
+        h2 {
+            text-align: left;
+            padding: 0;
+        }
+
+        &.cms-page-menu {
+            float: right;
+
+            .cms-page {
+
+                h2 {
+                    small {
+                        margin-top: 0;
+                    }
+                }
+
+                &.active {
+                    small {
+                        @include grid-media($grid-smartphone) {
+                            &::after {
+                                @include aws-icon("\f106");
+                            }
+                        }
+                    }
+
+                    .wd-page-menu {
+                        >ul {
+                            display: block;
+                        }
+                    }
+                }
+
+                small {
+                    @include grid-media($grid-smartphone) {
+                        &::after {
+                            @include aws-icon("\f107");
+                            float: right;
+                        }
+                    }
+                }
+
+                .wd-page-menu {
+                    >ul {
+                        padding-bottom: 15px;
+
+                        @include grid-media($grid-smartphone) {
+                            display: none;
+                        }
+
+                        li {
+                            margin: 0;
+                            margin-top: 15px;
+
+                            a {
+                                display: none;
+                            }
+
+                            ul {
+                                li {
+                                    a {
+                                        font-size: 14px;
+                                        color: $gray-25;
+                                        font-weight: normal;
+                                        display: block;
+
+                                        &:hover {
+                                            color: $gray-75;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .central-atendimento {
+        div {
+            display: inline-flex;
+            margin-bottom: 16px;
+
+            i {
+                font-size: 24px;
+            }
+
+            span {
+                display: flex;
+                flex-direction: column;
+                margin-left: 16px;
+
+                strong,
+                a {
+                    line-height: 1;
+                    font-size: 14px;
+                    color: $gray-25;
+                    font-weight: normal;
+
+                    &.chat-online {
+                        text-decoration: underline;
+                        color: $base-color;
+                    }
+                }
+
+                strong {
+                    padding-bottom: 5px;
+                }
+            }
+
+            &.horario {
+                padding-right: 20px;
+
+                i {
+                    margin-right: 16px;
+                }
+
+                small,
+                strong {
+                    font-size: 14px;
+                    font-weight: normal;
+                    color: $gray-25;
+                }
+            }
+        }
+    }
+
+    .footer-social {
+        * {
+            text-align: left;
+        }
+
+        .box {
+            max-width: 450px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+
+        a {
+            padding: 0;
+            padding-right: 20px;
+            display: inline-block;
+        }
+
+        i {
+            font-size: 30px;
+        }
+
+    }
+
+    .certificados,
+    .assinatura {
+        background-color: #F5F5F5;
+        color: $gray-dark;
+    }
+
+    .certificados {
+        border-top: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        &.simples {
+            border-top: 0;
+        }
+
+        .col {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            max-height: 100px;
+
+        }
+
+        .title,
+        .shields {
+            float: initial;
+        }
+
+        .shields {
+            margin-top: 12px;
+
+            img {
+                width: 290px;
+            }
+
+            >a {
+                float: left;
+                margin: 5px 10px;
+
+                &.shield-letsencrypt {
+                    width: 77px;
+                    height: 63px;
+                    background-image: url(/custom/content/themes/#{$theme-path}/Imagens/lets-encrypt.png);
+                }
+            }
+
+            .payment {
+                width: 32px;
+                height: 20px;
+                margin: 5px;
+                float: left;
+                background-color: #fff;
+                background-repeat: no-repeat;
+
+                &.payment-pay-amex {
+                    background-image: url(/custom/content/themes/#{$theme-path}/Imagens/pay-amex.png);
+                }
+
+                &.payment-pay-code {
+                    background-image: url(/custom/content/themes/#{$theme-path}/Imagens/pay-code.png);
+                }
+
+                &.payment-pay-master {
+                    background-image: url(/custom/content/themes/#{$theme-path}/Imagens/pay-master.png);
+                }
+
+                &.payment-pay-visa {
+                    background-image: url(/custom/content/themes/#{$theme-path}/Imagens/pay-visa.png);
+                }
+            }
+        }
+    }
+
+    .assinatura {
+        padding: 0 !important;
+
+        .wrapper {
+            >.row {
+                border-bottom: 1px solid $gray-light;
+                border-top: 1px solid $gray-light;
+                padding: 30px 0;
+                overflow: hidden;
+            }
+        }
+
+        .aboutme {
+            padding: 40px 0;
+
+            p {
+                margin: 0;
+                text-align: justify;
+            }
+        }
+
+        .copyright,
+        .creators {
+            text-align: center;
+        }
+
+        .copyright {
+            margin-bottom: 50px;
+        }
+
+        .creators {
+            padding-top: 20px;
+            overflow: hidden;
+            border-top: 1px solid #CED4DA;
+
+            .row {
+                .col {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            small {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .logo-creator {
+                img {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #footer {
+        .content-center {
+            >div {
+                margin-bottom: 10px;
+
+                &.cms-page-menu {
+                    padding: 0;
+                }
+
+                @media screen and(min-width: 768px) {
+                    &.certificados {
+                        flex-direction: row;
+                    }
+                }
+            }
+
+        }
+
+        .footer-newsletter {
+            .content {
+                h2 {
+                    text-align: center;
+                }
+
+                .wd-marketing-newsletter {
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .assinatura {
+            .aboutme {
+                #logo {
+                    display: flex;
+                    justify-content: center;
+                    padding: 0;
+
+                    a {
+                        height: 50px !important;
+                        margin-bottom: 10px;
+                        margin-left: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

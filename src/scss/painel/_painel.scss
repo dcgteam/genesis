@@ -1,0 +1,451 @@
+body {
+    &.area-profile {
+        background-color: #F5F5F5;
+
+        #footer {
+            .input-wrapper {
+                input {
+                    height: 42px;
+                }
+            }
+        }
+
+        &[class*="page-account"] {
+            #middle {
+                #content {
+                    .col-lg-10 {
+                        .input-wrapper {
+                            @media screen and (min-width: 992px) {
+                                width: 50%;
+                            }
+
+                            label {}
+
+                            input,
+                            select {
+                                border: 1px solid $gray-75;
+                                @include round(0);
+                                height: 48px;
+                            }
+
+                            input[type="checkbox"] {
+                                height: auto;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.area-profile {
+
+    @media screen and(min-width: 991px) {
+        #middle {
+            #content {
+                padding: 0;
+
+                #content-wrapper {
+                    >.row {
+                        >.col {
+                            &.col-lg-2 {
+                                padding: 0;
+                            }
+
+                            &.col-lg-10 {
+                                padding-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .wd-browsing-breadcrumbs {
+        display: none;
+    }
+
+    .center-box {
+        background-color: #fff;
+        box-shadow: 1px 1px 1px 1px $gray-medium;
+
+        @media screen and (min-width: $breakpoint-mobile) {
+            padding: 25px;
+            margin: 30px;
+        }
+
+        @media screen and (max-width: $breakpoint-mobile) {
+            padding: 25px;
+        }
+    }
+
+    span.error {
+        color: darken($danger, 40%);
+        display: inline-block;
+        padding: 5px;
+    }
+
+    #middle {
+        padding-top: 30px;
+
+        #content {
+            #content-wrapper {
+                .col-lg-10 {
+                    .wd-widget {
+                        border-radius: 3px;
+                        background-color: white;
+
+                        .wd-header {
+                            margin: 32px;
+                            padding-bottom: 15px;
+                            border-bottom: 1px solid $gray-75;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            .wd-title {
+                                margin-left: 0;
+                                font-size: 20px;
+                                color: $gray;
+                            }
+                        }
+
+                        .wd-content {
+                            margin: 0;
+                            box-shadow: none;
+                            padding: 32px;
+                            padding-top: 0;
+                        }
+                    }
+
+                    [class*="wd-widget"] {
+                        margin-bottom: 0;
+                    }
+
+                    .button-wrapper {
+                        background-color: white;
+                        padding: 20px;
+                        padding-left: 0;
+                        padding-bottom: 40px;
+                        text-align: left;
+
+                        button {
+                            width: 100%;
+
+                            @media screen and (min-width: 992px) {
+                                width: 44.2%;
+                                margin-left: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:not(.page-login):not(.page-register) {
+        #content {
+            @extend .col-lg-10 !optional;
+            width: inherit;
+            @extend .order-2 !optional;
+
+            #content-wrapper {
+                margin: 0;
+            }
+
+            @media screen and (max-width: $breakpoint-mobile) {
+                padding: 0;
+            }
+        }
+    }
+
+    #left {
+        margin: 0;
+        @extend .order-1 !optional;
+        @extend .col-lg-2 !optional;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+            padding: 0;
+        }
+    }
+
+    &.AccountWishlistRoute {
+        #middle {
+            #content {
+                .wd-profile-wishlist-list {
+                    margin-bottom: 0;
+
+                    .wd-content {
+                        .no-data {
+                            text-align: center;
+                            font-size: 16px;
+                            margin: 20px;
+
+                            &::before {
+                                content: '';
+                                width: 200px;
+                                height: 130px;
+                                background: url(/custom/content/themes/Base/Imagens/painel-imagens/no-wishlist.png);
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                display: block;
+                                margin: 0 auto;
+                            }
+
+                            &::after {
+                                content: 'Crie sua lista para poder salvar e compartilhar seus produtos desejados.';
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                .wd-profile-wishlist-form {
+                    .wd-content {
+                        .show-address {
+                            border: 0;
+
+                            input[name="DeliveryAddressID"] {
+                                width: 25px;
+                                height: 25px;
+                            }
+
+                            table {
+                                tbody {
+                                    tr:nth-child(odd) {
+                                        background: #f2f2f2;
+                                    }
+
+                                    td {
+                                        border-spacing: 0 !important;
+                                    }
+                                }
+                            }
+
+                            .link-create-address {
+                                position: relative;
+                                margin: 15px auto;
+                                color: $gray;
+                                border: 1px solid $gray-75;
+                                background-color: transparent;
+                                @include round(0);
+                            }
+                        }
+                    }
+                }
+
+                .button-wrapper {
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+    &.AccountOrderRoute {
+        #middle {
+            #content {
+                .wd-profile-orders {
+                    margin-bottom: 0;
+
+                    .wd-content {
+                        .no-data {
+                            text-align: center;
+                            font-size: 16px;
+                            margin: 20px;
+
+                            &::before {
+                                content: '';
+                                background: url(/custom/content/themes/Base/Imagens/painel-imagens/no-orders.png?nocache);
+                                background-repeat: no-repeat;
+                                width: 170px;
+                                height: 125px;
+                                display: block;
+                                margin: 10px auto;
+                            }
+
+                            &::after {
+                                content: 'Faça sua primeira compra :)';
+                                display: block;
+                            }
+                        }
+
+                        .grid {
+                            table {
+                                tbody {
+                                    tr {
+                                        td {
+                                            a {
+                                                color: $gray;
+                                            }
+
+                                            button {
+                                                background: transparent;
+                                                color: $gray;
+                                                padding-left: 0;
+
+                                                &::before {
+                                                    @include aws-icon("\f06e");
+                                                    font-weight: normal;
+                                                    margin-right: 10px;
+                                                }
+
+                                                &.payment {
+                                                    display: none;
+                                                }
+                                            }
+
+                                            .expired {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .button-wrapper {
+                    background-color: white;
+
+                }
+            }
+        }
+    }
+
+    &.AccountRoute {
+        #middle {
+            #content {
+                .wd-profile-register {
+                    margin-bottom: 0;
+
+                    .wd-content {
+                        padding: 32px;
+                        padding-top: 0;
+
+                        #alterar-senha {
+                            display: none;
+                        }
+
+                        .conteudo {
+                            fieldset {
+                                @media screen and(max-width: 991px) {
+                                    min-width: 100%;
+
+                                    .content {
+                                        .left {
+                                            .input-wrapper {
+                                                &.input-file {
+                                                    input {
+                                                        border: 0;
+                                                        width: 100%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                @media screen and(min-width: 992px) {
+                                    .content {
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: space-between;
+
+                                        .left {
+                                            width: 46%;
+
+                                            .input-wrapper {
+                                                width: 100%;
+
+                                                &.input-file {
+                                                    input {
+                                                        border: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .separador {
+                                            width: 1px;
+                                            height: auto;
+                                            background: $gray-75;
+                                            background: -moz-linear-gradient(top, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                                            background: -webkit-linear-gradient(top, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                                            background: linear-gradient(to bottom, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                                        }
+
+                                        .right {
+                                            width: 46%;
+
+                                            .input-wrapper {
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .button-wrapper {
+                    background-color: white;
+                    padding: 20px;
+                    text-align: center;
+                    padding-bottom: 40px;
+
+                    button {
+                        width: 100%;
+                    }
+
+                    @media screen and(max-width: 991px) {
+                        padding-left: 20px !important;
+                    }
+
+                    @media screen and(min-width: 992px) {
+                        button {
+                            width: 400px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .area-profile {
+        .wd-profile-panelmenu {
+            nav {
+                z-index: 1;
+                display: none;
+            }
+
+            &.opened {
+                nav {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.area-profile {
+    &.AccountWishlistRoute {
+        #middle {
+            #content {
+                .wd-profile-wishlist-manage {
+                    .wd-header {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+    }
+}

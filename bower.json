@@ -1,0 +1,24 @@
+{
+  "name": "generator",
+  "version": "0.0.0",
+  "authors": [
+    "Luiza Haas <luizahaas2@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.2.5",
+    "normalize-css": "~4.0.0",
+    "neat": "~3.0.0"
+  },
+  "devDependencies": {
+    "bourbon": "~4.2.5",
+    "bootstrap": "~4.0.0"
+  }
+}

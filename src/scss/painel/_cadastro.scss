@@ -1,0 +1,122 @@
+.AccountRegisterRoute {
+
+    &.area-profile {
+        #middle {
+            #content {
+                .center-box {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .wd-profile-register {
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            height: 48px;
+            @include round(0);
+        }
+
+        .wd-header {
+            .wd-icon {
+                display: none;
+            }
+
+            .wd-title {
+                @extend h2;
+            }
+
+            border-bottom: 0 !important;
+        }
+
+        .wd-subtitle {
+            @extend h3;
+        }
+
+        fieldset {
+            .input-wrapper {
+
+
+                .input-group {
+                    display: flex;
+                    flex-direction: row;
+
+                    .person,
+                    .company {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 144px;
+                        height: 48px;
+                        @include round(25px);
+                        border: 1px solid $gray-75;
+                        margin-right: 13px;
+
+                        label {
+                            margin: 0;
+                            width: 97px;
+                        }
+
+                        input[type="radio"] {
+                            width: 23px;
+                            height: 23px;
+                            top: 0;
+                            position: initial;
+                            margin: 0;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+
+            .customer-type {
+
+                &.customer-type-person,
+                &.customer-type-company {
+                    float: left;
+                    width: 100%;
+                }
+            }
+
+            .input-wrapper:not(.customer-type-person) {
+                width: 49%;
+                float: left;
+                min-height: 90px;
+                max-height: 90px;
+
+                &:nth-child(2n) {
+                    float: right;
+                }
+
+                &.addorsetcustomer-name,
+                &.addorsetcustomer-surname,
+                &.input-wrapper-email {
+                    width: 100%;
+                }
+
+                &.addorsetcustomer-gender,
+                &.addorsetcustomer-birthdate,
+                &.addorsetcustomer-cpf {
+                    width: 33.33%;
+                    float: left;
+                }
+
+                &.addorsetcustomer-gender,
+                &.addorsetcustomer-cpf {
+                    padding-left: 10px;
+                }
+
+                @include grid-media($grid-pp) {
+                    width: 100% !important;
+                    padding: 0 !important;
+                }
+            }
+        }
+
+        .bt-submit {
+            @extend .btn-wide;
+        }
+    }
+}

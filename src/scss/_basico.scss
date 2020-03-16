@@ -1,0 +1,426 @@
+body {
+    font-family: $font-family;
+    font-size: $font-size;
+    color: $gray;
+    margin: 0;
+    padding: 0;
+
+    &.menu-opened {
+        &::before {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.45);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+        }
+
+    }
+
+    &.category-opened {
+        &::before {
+            content: '';
+            background-color: rgba(0, 0, 0, 0.45);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+        }
+
+        #header {
+
+            .top-bar,
+            .category-bar,
+            .main-bar {
+                position: relative;
+                z-index: 99;
+            }
+        }
+    }
+
+    &.area-profile {
+        background-color: $gray-extralight;
+    }
+
+    &.topo-simples {
+        header {
+            &#header {
+                .main-bar {
+                    box-shadow: 1px 1px 1px 1px #ddd;
+                }
+            }
+        }
+    }
+
+    &.rodape-simples {
+        footer {
+            &#footer {
+                .certificados {
+                    border-top: 0;
+                }
+            }
+        }
+    }
+
+    #footer,
+    #header,
+    #middle {
+        min-width: auto;
+    }
+
+    #footer {
+        margin-top: 50px;
+    }
+
+    a {
+        text-decoration: none;
+        color: $base-color;
+
+        &:active {
+            color: darken($base-color, 20%);
+            text-decoration: none;
+        }
+
+        &:hover {
+            color: darken($base-color, 20%);
+            text-decoration: underline;
+        }
+    }
+
+    input[type="color"],
+    input[type="date"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="text"],
+    textarea,
+    select {
+        font-size: 14px;
+        display: block;
+        width: 100%;
+        height: 42px;
+        padding: 6px 12px;
+        box-sizing: border-box;
+        color: $font-dark;
+        font-family: $font-family;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid $gray-medium;
+        @include round(2px);
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+        -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+
+        &.error {
+            border: 1px solid darken($danger, 40%);
+        }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        position: relative;
+        top: 3px;
+    }
+
+    .input-group,
+    .input-wrapper {
+        margin-bottom: 15px;
+
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+            margin-top: 9px;
+            font-weight: bold;
+            vertical-align: top;
+            font-size: 0.97em;
+        }
+
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    ul,
+    ol {
+        li {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+
+    h1 {
+        font-size: 2.1em;
+
+        small {
+            font-size: 0.7em;
+        }
+    }
+
+    h2 {
+        font-size: 1.8em;
+
+        small {
+            font-size: 0.6em;
+        }
+    }
+
+    h3 {
+        font-size: 1.6em;
+
+        small {
+            font-size: 0.8em;
+        }
+    }
+
+    h4 {
+        font-size: 1.3em;
+
+        small {
+            font-size: 0.9em;
+        }
+    }
+
+    h5 {
+        font-size: 1em;
+
+        small {
+            font-size: 1em;
+        }
+    }
+
+    h6 {
+        font-size: 0.9em;
+
+        small {
+            font-size: 0.9em;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        display: block;
+        margin-bottom: 15px;
+        margin-top: 10px;
+        font-weight: bold;
+
+        small {
+            font-weight: normal;
+            display: block;
+            margin-top: 15px;
+        }
+    }
+
+    p {
+        line-height: 1.3em;
+        margin-top: 0;
+        margin-bottom: 1.2em;
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    table {
+
+        thead th,
+        tbody td,
+        tfoot td {
+            border-bottom: 1px solid $gray-light;
+            padding: 0.5em 0 !important;
+        }
+
+        thead {
+            th {
+                text-transform: uppercase;
+                text-align: left;
+                font-size: 0.9em;
+            }
+        }
+
+        tbody {
+            tr {
+                &:last-child {
+                    td {
+                        border-bottom: none;
+                    }
+                }
+
+                td {}
+
+                &:hover {
+                    td {}
+                }
+            }
+        }
+
+        tfoot {}
+    }
+
+    .hide {
+        display: none;
+    }
+
+    &.columns-2-left {
+        #content {
+            @include minus($wrapper, 180px);
+            clear: none;
+
+            #content-wrapper {
+                margin: 0;
+            }
+        }
+    }
+
+    .assinatura {
+        #logo {
+            @media screen and (min-width: 426px) and (max-width: 991px) {
+                a {
+                    width: 100% !important;
+
+                    img {
+                        margin: 0 auto;
+                    }
+                }
+            }
+
+            @media screen and(max-width: 425px) {
+                a {
+                    background-position-y: 0;
+
+                    img {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+
+    #logo {
+        @media screen and (max-width: 767px) {
+            padding-left: 0;
+
+            a {
+                height: 30px !important;
+            }
+        }
+
+        h1 {
+            margin: 0;
+
+            @media screen and (min-width: 426px) and (max-width: 991px) {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        a {
+            background-image: url(/custom/content/themes/#{$theme-path}/Imagens/logo.png?nocache);
+            background-repeat: no-repeat;
+            display: block;
+            width: 170px;
+            height: 40px;
+            font-size: 0;
+            margin: 0;
+            background-size: contain;
+            background-position-y: 0;
+
+            @media screen and (min-width: 426px) and (max-width: 991px) {
+                width: 45%;
+                background-position-y: 0;
+            }
+        }
+    }
+
+    #overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: $gray-dark;
+        opacity: 0.5;
+        z-index: 2;
+    }
+}
+
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.wrapper,
+.grid-products #middle,
+[class^="context-category"] #middle {
+    @include grid-container;
+    position: relative;
+    margin: 0 auto;
+
+    .row {
+        width: 100%;
+        float: none;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: $wrapper) {
+
+    .wrapper,
+    .grid-products #middle,
+    [class^="context-category"] #middle {
+        @include wrapper-width();
+    }
+}
+
+@media screen and (max-width: ($wrapper - 1px)) {
+    #middle {
+        padding: 15px;
+    }
+
+    .wrapper,
+    .grid-products #middle,
+    [class^="context-category"] #middle {
+        @include wrapper-width(100%);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .no-medium {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .no-small {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .no-desktop {
+        display: none !important;
+    }
+}

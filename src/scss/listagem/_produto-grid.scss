@@ -1,0 +1,205 @@
+.wd-browsing-grid {
+    .wd-browsing-grid-sorter {
+        position: initial;
+        width: 27%;
+        min-width: 250px;
+        display: inline-block;
+        float: right;
+
+        @include grid-media($grid-smartphone) {
+            float: left;
+            margin-top: 15px;
+        }
+
+        * {
+            display: inline-block;
+        }
+
+        select {
+            max-width: 160px;
+            margin-left: 5px;
+        }
+    }
+
+    .wd-header {
+        @media screen and(max-width: 991px) {
+            display: none;
+        }
+    }
+
+    header {
+        .wd-browsing-grid-pager {
+            @media screen and(max-width: 991px) {
+                display: none;
+            }
+
+            .page-number {
+                display: none;
+            }
+        }
+    }
+
+    footer {
+        .wd-browsing-grid-pager {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .description {
+                display: none;
+            }
+
+            .page-number {
+                span {
+                    margin-right: 10px;
+                }
+
+                .page-selected {
+                    background-color: $base-color;
+                    width: 40px;
+                    height: 40px;
+                    @include round(100%);
+                    font-size: 15px;
+                    font-weight: 700;
+                    border: 1px solid $base-color;
+                    padding-top: 10px;
+                    text-align: center;
+                    color: #fff;
+                }
+
+                .other-pg {
+                    background-color: white;
+                    width: 40px;
+                    height: 40px;
+                    @include round(100%);
+                    font-size: 15px;
+                    font-weight: 700;
+                    border: 1px solid $gray-25;
+                    padding-top: 10px;
+                    text-align: center;
+                    color: $gray-25;
+
+                    a {
+                        text-decoration: none;
+                        padding: 9px;
+                    }
+                }
+            }
+        }
+
+        .wd-browsing-grid-sorter {
+            display: none;
+        }
+    }
+
+    .wd-browsing-grid-pager {
+        width: 73%;
+        display: inline-block;
+
+        @include grid-media($grid-smartphone) {
+            width: 100%;
+        }
+    }
+
+    .wd-browsing-grid-list {
+        margin: 15px 0;
+
+        >ul {
+            border-top: 1px solid $gray-light;
+            border-bottom: 1px solid $gray-light;
+            padding-bottom: 30px;
+
+            li {
+                .wd-product-line {
+                    .wd-product-line-medias {
+                        a {
+                            &.thumb {
+                                box-sizing: content-box;
+                            }
+                        }
+
+                        @media screen and (min-width: 768px) and (max-width: 991px) {
+                            a {
+                                &.thumb {
+                                    width: 100% !important;
+
+                                    img {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.wd-product-line-medias-variations {
+                            &.wd-widget-js {
+                                height: 32px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .wd-browsing-grid-list {
+        >ul {
+            >li {
+                padding: 0;
+            }
+        }
+    }
+
+    .grid-products #content-wrapper {
+        margin: 0;
+
+        #left {
+            .wd-facet-group {
+                display: none;
+            }
+
+            &.active {
+                .wd-facet-group {
+                    display: block;
+                    height: 100%;
+                }
+            }
+        }
+
+        .col-lg-10 {
+            &.col-12 {
+                padding: 0;
+            }
+        }
+    }
+
+    .wd-browsing-grid-sorter {
+        display: none;
+    }
+}
+
+.grid-products {
+    #middle {
+        #content {
+            .page-description {
+                h2 {
+                    margin-bottom: 0;
+                    padding-left: 10px;
+
+                    @media screen and(max-width: 991px) {
+                        padding-left: 0;
+                    }
+                }
+
+                .text-category {
+                    .text {
+                        margin-left: 10px;
+                        margin-top: 16px;
+                        text-align: justify;
+                    }
+                }
+            }
+        }
+    }
+}

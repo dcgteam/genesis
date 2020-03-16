@@ -1,0 +1,190 @@
+.wd-checkout-basket-summaryheader {
+    height: 36px;
+
+    &.empty {
+        .wd-widget {
+            &::before {
+                content: '' !important;
+            }
+        }
+    }
+
+    &:hover {
+        @media screen and (max-width: 768px) {
+            .summaryheader-content.wd-widget {
+                display: none !important;
+            }
+        }
+    }
+
+    >a {
+        b {
+            font-size: 0;
+
+            &:before {
+                @include aws-icon("\f07a");
+                font-size: 27px;
+                position: relative;
+                top: 4px;
+                color: $base-color;
+            }
+        }
+
+        .basket-size-wrapper {
+            background-color: $base-color-2;
+            color: $font-light;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            left: 20px;
+            bottom: -5px;
+            font-size: 0.8em;
+            text-align: center;
+            line-height: 19px;
+            border: 2px solid #fff;
+            font-weight: bold;
+            @include round(100%);
+
+            .basket-size {
+                color: white;
+            }
+        }
+    }
+
+    &.empty {
+        .wd-widget {
+            padding: 20px 15px;
+            text-align: center;
+
+            >div {
+                display: none;
+            }
+
+            &:before {
+                content: ":(";
+                font-size: 35px;
+                color: $base-color;
+                padding-bottom: 10px;
+                display: block;
+            }
+
+            &:after {
+                content: "Seu carrinho está vazio";
+                font-size: 1.5em;
+                line-height: 35px;
+            }
+        }
+    }
+
+    .wd-widget {
+        background-color: #fff;
+        border: 1px solid $gray-light;
+        padding: 15px;
+        top: 43px;
+        right: -75px;
+        overflow: visible;
+        border: 1px solid $gray-75;
+
+        &::before {
+            content: '';
+            background: url(/custom/content/themes/Base/Imagens/ponta5.png?nocache);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 15px;
+            height: 10px;
+            display: block;
+            position: absolute;
+            top: -9px;
+            right: 80px;
+            z-index: 99;
+        }
+
+        .wd-header {
+            font-size: 18px;
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 15px;
+
+            .wd-title {
+                color: $gray-25;
+                font-size: 18px;
+            }
+        }
+
+        .wd-content {
+            padding: 0;
+            padding-bottom: 15px;
+            margin: 0;
+
+            ul {
+                padding: 0;
+
+                li {
+                    &.name {
+                        width: 80%;
+                        color: $gray-25;
+                        margin: 0;
+                        padding: 0;
+                        padding-top: 15px;
+                        padding-left: 10px;
+                        height: auto;
+                        display: flex;
+
+                        .freeitem {
+                            display: none;
+                        }
+                    }
+
+                    &.price {
+                        font-weight: bold;
+                        font-size: 16px;
+                        padding: 0;
+                        width: 80%;
+                        text-align: left;
+                        margin: 0;
+                        line-height: 1;
+                        padding-left: 10px;
+                        color: $gray-25;
+                    }
+                }
+            }
+
+            .subtotal {
+                padding: 0;
+                height: auto;
+
+                li {
+                    margin: 0;
+                    color: $gray-25;
+                    font-weight: normal;
+                }
+
+                .value {
+                    position: initial;
+                    float: right;
+                    font-weight: bold;
+                    color: $gray-25;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .wd-footer {
+            padding: 0;
+            border-top: none;
+
+            .go-to-basket {
+                background-color: $btn-buy;
+                width: 100%;
+                border-radius: 0;
+                font-size: 18px;
+                font-weight: bold;
+                padding: 11px;
+            }
+
+            .go-to-checkout {
+                display: none;
+            }
+        }
+    }
+}

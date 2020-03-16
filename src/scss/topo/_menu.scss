@@ -1,0 +1,223 @@
+.category-bar {
+    background-color: $base-color;
+    min-height: 46px;
+
+    @include grid-media($grid-p) {
+        display: none;
+    }
+
+    @include grid-media($grid-pp) {
+        display: none;
+    }
+
+    .all-category {
+        background-color: $darken-color;
+        position: initial;
+
+        .button-extend {
+            position: relative;
+            height: 100%;
+            text-align: center;
+            color: $font-light;
+            padding: 0.66em 1.5em;
+            width: 100%;
+            box-sizing: border-box;
+            line-height: 2em;
+            cursor: pointer;
+
+            .arrow-up {
+                width: 0;
+                height: 0;
+                border-left: 7px solid transparent;
+                border-right: 7px solid transparent;
+                border-bottom: 7px solid #FFFFFF;
+                position: absolute;
+                top: 40px;
+                left: 50%;
+                margin-left: -7px;
+                opacity: 0;
+                transition: all 0.3s cubic-bezier(0.4, 0.2, 0, 1) 0ms;
+            }
+        }
+
+        >.wd-category-menu {
+            display: none;
+            position: absolute;
+            min-height: auto;
+            background-color: #fff;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            z-index: 100;
+            overflow: hidden;
+            transition-delay: 100ms;
+
+            .wd-category-menu {
+                ul.level-1 {
+                    border: 1px solid $gray-light;
+                    border-top: 0;
+                    padding: 0 20px;
+                    overflow: hidden;
+
+                    >li {
+                        padding: 20px 0;
+                        margin: 0;
+                        box-sizing: border-box;
+                        height: 200px;
+                        @include grid-column(3);
+
+                        * {
+                            font-size: $font-size;
+                        }
+
+                        h3 {
+                            border-bottom: 1px solid $gray-medium;
+                            padding-bottom: 10px;
+
+                            a {
+                                font-weight: bold;
+                            }
+                        }
+
+                        .sub-section {
+                            li {
+                                display: block;
+                                float: none;
+                                margin-bottom: 0;
+
+                                h4 {
+                                    font-weight: normal;
+                                    margin: 0;
+
+                                    a {
+                                        font-size: 0.9em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        &:hover {
+            >.wd-category-menu {
+                display: block;
+            }
+
+            .arrow-up {
+                opacity: 1;
+            }
+        }
+    }
+
+    .main-category {
+        margin: 0;
+
+        .section {
+            >li {
+                float: left;
+                margin: 0;
+                padding: 0;
+
+                h3 {
+                    font-size: $font-size;
+                    font-weight: normal;
+                    display: inline-block;
+                    padding: 0;
+                    margin: 0;
+
+                    a {
+                        color: $font-light;
+                        padding: 1.06em 1.4em;
+                        display: block;
+                        text-decoration: none;
+                    }
+                }
+
+                &:not(:first-child) {
+                    &:before {
+                        content: '';
+                        width: 1px;
+                        height: 12px;
+                        display: inline-block;
+                        background-color: $font-light;
+                    }
+                }
+
+                &:hover {
+                    background-color: $darken-color;
+
+                    .sub-section {
+                        display: block;
+                        position: absolute;
+                        border: 1px solid $gray-light;
+                        border-top: 0;
+                        background-color: $font-light;
+                        z-index: 55;
+                        padding: 20px 30px;
+                        min-width: 100px;
+                        transition-delay: 100ms;
+
+                        li {
+                            &:first-child {
+                                margin-top: 0;
+                            }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            h4 {
+                                margin: 0;
+                            }
+                        }
+
+                        * {
+                            font-size: 0.97em;
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+        }
+
+        .sub-section {
+            display: none;
+        }
+    }
+
+    .day-offer {
+        background-color: $darken-color;
+        height: 46.66px;
+        float: right;
+        text-align: center;
+        text-transform: uppercase;
+        color: $font-light;
+        line-height: 46px;
+        cursor: pointer;
+        flex: auto;
+
+        &:hover {
+            background-color: $darken-color;
+
+            .dropdown-oferta {
+                display: block;
+            }
+        }
+
+        .dropdown-oferta {
+            display: none;
+            position: absolute;
+            right: 0;
+            width: 300px;
+            z-index: 2;
+            transition: all 0.3s cubic-bezier(0.4, 0.2, 0, 1) 0ms;
+
+            .wd-marketing-banner {
+                margin-top: 20px;
+            }
+        }
+    }
+}

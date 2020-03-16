@@ -1,0 +1,131 @@
+.wd-checkout-basket-discount-progressive {
+    padding: 30px 0;
+
+    .wd-header {
+        display: none;
+    }
+
+    .content-header {
+        margin-bottom: 30px;
+
+        .title {
+            color: $cart-destaque;
+            font-size: 1.4em;
+        }
+    }
+
+    ul {
+        li {
+            margin: 0;
+            padding: 0;
+            border: 1px solid $gray-semilight;
+            position: relative;
+            text-align: center;
+            padding-top: 10px;
+
+            &:not(:last-child) {
+                border-right: 0;
+            }
+
+            position: relative;
+
+            .warning {
+                position: absolute;
+                top: -27px;
+                width: 100%;
+                text-align: center;
+                padding: 5px 0;
+                color: $gray-dark;
+
+                @media screen and (min-width: 768px) {
+                    top: 0;
+                }
+            }
+
+            i {
+                color: $font-light;
+                position: absolute;
+                font-size: 20px;
+                top: -9px;
+                right: 47%;
+
+                &.gray {
+                    color: $gray-semilight;
+                    top: -7px;
+                }
+            }
+
+            .values {
+                padding-top: 0px;
+                font-size: 1em;
+                width: 100%;
+                text-align: center;
+                padding: 1em;
+                background: $gray-extralight;
+                white-space: nowrap;
+                display: block;
+            }
+
+            >.discount {
+                float: left;
+                text-align: center;
+                width: 100%;
+                font-weight: bold;
+                font-size: 1.125rem;
+                padding: 10px 0;
+
+                .sufix {
+                    font-weight: normal;
+                    display: block;
+                    font-size: 0.75rem;
+                }
+            }
+
+            &.active {
+
+                @media screen and (min-width: 768px) {
+
+                    .numbers,
+                    .product {
+                        position: absolute;
+                        z-index: 9;
+                        color: white;
+                    }
+
+                    .numbers {
+                        left: 5px;
+                        top: 5px;
+                    }
+
+                    .product {
+                        left: 20px;
+                        top: 5px;
+                    }
+                }
+
+                .discount {
+                    color: $cart-destaque;
+                    padding-top: 30px;
+                }
+
+                border-right: 1px solid;
+                border-color: $cart-destaque;
+
+                .warning {
+                    background-color: $cart-destaque;
+                    border: 1px solid;
+                    border-color: $cart-destaque;
+                    border-bottom: 0;
+                    color: $font-light;
+                    width: 100%;
+                    left: 0;
+                }
+
+                i {
+                    color: $cart-destaque;
+                    top: -9px;
+                }
+            }
+        }
+    }
+}

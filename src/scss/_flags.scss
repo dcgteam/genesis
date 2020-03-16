@@ -1,0 +1,9 @@
+.wd-flags {
+    position: absolute;
+    z-index: 10;
+
+    .flag {
+        @include flag();
+    }
+
+}

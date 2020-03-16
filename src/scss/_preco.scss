@@ -1,0 +1,118 @@
+[class*="context-product"] {
+    .product-detail {
+        .information {
+            .wd-product-price-description {
+                .list-price {
+                    @media screen and (max-width: 768px) {
+                        display: flex;
+
+                    }
+
+                    span {
+                        font-size: 32px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wd-product-price-description {
+    margin: 10px 0;
+    margin-top: 0;
+
+    .list-price {
+        color: $gray-25;
+        font-size: 15px;
+        font-weight: 500;
+        display: flex !important;
+        flex-direction: column;
+
+        &.de-por {
+            display: block;
+
+            span {
+                font-size: 14px;
+                color: $gray-25;
+                font-weight: 400;
+            }
+        }
+
+        .prefix {
+            font-size: 1.4em;
+        }
+
+        span {
+            font-size: 24px;
+            color: $gray;
+            font-weight: 600;
+        }
+
+        &.variation {
+            color: $font-dark;
+
+            span {
+                font-weight: bold;
+                font-size: 1.6em;
+                color: $base-color;
+            }
+        }
+    }
+
+    .sale-price {
+        .prefix {
+            font-size: 1em;
+        }
+
+        span {
+            font-size: 24px;
+            color: $gray;
+            font-weight: 600;
+        }
+    }
+
+    .condition {
+        font-size: 1em;
+        line-height: 1.3em;
+
+        .label {}
+
+        .parcels,
+        .parcel-value {
+            font-weight: bold;
+        }
+    }
+
+    .savings {
+        font-size: 1em;
+
+        .discount {
+            font-weight: bold;
+            color: $price-off;
+        }
+    }
+}
+
+.wd-product-line {
+    .wd-product-price-description {
+        height: 100px;
+        display: flex;
+        align-items: center;
+
+        .condition {
+            span {
+                font-size: 14px;
+                font-weight: 500;
+                color: $gray-25;
+            }
+        }
+    }
+}
+
+.product-detail .head {
+    .sale-price {
+        span {
+            font-size: 32px;
+        }
+    }
+}

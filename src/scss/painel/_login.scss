@@ -1,0 +1,238 @@
+.area-profile {
+    &.AccountRegisterRoute {
+        background-color: white;
+    }
+
+    @media screen and (max-width: 991px) {
+
+        &.AccountRegisterRoute,
+        &.LoginRoute {
+            #middle {
+                #content {
+                    .container {
+                        padding: 0;
+
+                        .wd-profile-register {
+                            .wd-content {
+                                .conteudo {
+                                    .customer-type-data {
+                                        min-width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.LoginRoute {
+        background-color: white;
+
+        button[name="Login.Submit"],
+        .recover-password-button {
+            @extend .btn-wide;
+            margin: 30px auto;
+            display: block;
+        }
+
+        .js-login-recoverpassword {
+            display: block;
+            text-align: center;
+            margin: 0 auto 20px;
+        }
+
+        .register-now {
+            @extend .btn-outline;
+            max-width: 200px;
+            display: block;
+            text-align: center;
+            margin: 0 auto 20px;
+        }
+
+        .login-box {
+            @media screen and (min-width: 992px) {
+                justify-content: space-around;
+
+            }
+
+            .painel-jasoucliente,
+            .painel-criarconta {
+                margin-top: 66px;
+                border: 0;
+
+                h2 {
+                    font-size: 18px;
+                    color: $gray-25;
+                }
+
+            }
+
+            .separador {
+                width: 1px;
+                background: $gray-75;
+                background: -moz-linear-gradient(top, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                background: -webkit-linear-gradient(top, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                background: linear-gradient(to bottom, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                height: 460px;
+                margin-top: 110px;
+            }
+
+            .login-oauth {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+
+                p {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: $gray-25;
+
+                    &.option {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-top: 25px;
+                        margin-bottom: 15px;
+
+                        &::before {
+                            content: '';
+                            width: 45%;
+                            position: relative;
+                            left: 0;
+                            height: 1px;
+                            display: block;
+                            background: $gray-75;
+                            background: -moz-linear-gradient(left, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                            background: -webkit-linear-gradient(left, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                            background: linear-gradient(to right, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                        }
+
+                        &::after {
+                            content: '';
+                            width: 45%;
+                            position: relative;
+                            right: 0;
+                            height: 1px;
+                            display: block;
+                            background: $gray-75;
+                            background: -moz-linear-gradient(left, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                            background: -webkit-linear-gradient(left, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                            background: linear-gradient(to right, #f2f5f7 0%, #a9abad 50%, #a9abad 52%, #f2f5f7 100%);
+                        }
+                    }
+
+                    &.login-fb {
+                        margin: 10px 0;
+                    }
+                }
+            }
+
+            .painel-jasoucliente {
+                @media screen and(min-width: 992px) {
+                    padding-right: 0;
+                    padding-left: 60px;
+                    margin-left: 30px;
+                }
+
+                .painel-box {
+
+                    .wd-profile-login {
+                        .input-wrapper {
+                            position: relative;
+
+                            label {
+                                width: 100%;
+                                color: $gray-25;
+                            }
+
+                            input {
+                                height: 48px;
+                            }
+                        }
+
+                        div {
+                            &.load {
+                                background: url(/custom/content/themes/Base/Imagens/loading-cart-white.svg?nocache);
+                                background-repeat: no-repeat;
+                                background-size: 35px;
+                                background-position-x: 50%;
+                                background-position-y: 50%;
+                                background-color: $base-color;
+                                width: 100%;
+                                height: 48px;
+                                left: 44%;
+                                margin-left: 0;
+                                position: absolute;
+                                top: 108px;
+                                left: 0;
+
+                            }
+                        }
+
+                        button {
+                            height: 48px;
+                            font-size: 18px;
+                            line-height: 0;
+                        }
+                    }
+                }
+            }
+
+            .painel-criarconta {
+                @media screen and(min-width: 992px) {
+                    padding-right: 60px;
+                    padding-left: 0;
+                    margin-right: 30px;
+                }
+
+                .painel-box {
+                    .wd-profile-preregister {
+                        .wd-header {
+                            display: none;
+                        }
+
+                        .wd-content {
+                            padding: 0;
+
+                            .input-wrapper {
+                                label {
+                                    width: 100%;
+                                    color: $gray-25;
+                                }
+
+                                input {
+                                    &.email {
+                                        width: 100%;
+                                    }
+
+                                    height: 48px;
+                                }
+                            }
+
+                            button {
+                                &.register-now {
+                                    width: 100%;
+                                    background-color: $base-color;
+                                    color: white;
+                                    height: 48px;
+                                    min-width: 100%;
+                                    margin: 0;
+                                    line-height: 0;
+                                    font-size: 18px;
+                                    margin-top: 30px;
+                                }
+                            }
+
+                            .info-termos {
+                                margin-top: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

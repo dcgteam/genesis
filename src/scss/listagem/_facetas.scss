@@ -1,0 +1,233 @@
+#left {
+    padding: 0;
+    margin: 0;
+
+    .wd-facet-group {
+        .facets {
+            background: #fff;
+            border: 0;
+            @include round(0);
+
+            .wd-facet-type-rating {
+                .facet-type-list {
+                    ul {
+                        li {
+                            h4 {
+                                a {
+                                    .option-title {
+                                        width: 76px !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .facet-type {
+                &.colors {
+                    .facet-type-list {
+                        ul {
+                            li {
+                                h4 {
+                                    a {
+                                        .markup-color {
+                                            display: block;
+                                            width: 18px;
+                                            height: 18px;
+                                            @include round(100%);
+                                            border: 2.5px solid white;
+                                            margin: 0.3rem;
+                                            margin-top: 0;
+                                            margin-left: 2px;
+                                            box-shadow: 0px 0px 0px 1px #ccc;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .facet-type-list {
+                    ul {
+                        padding: 0;
+
+                        li {
+                            h4 {
+                                a {
+                                    display: flex;
+                                    justify-content: space-between;
+
+                                    .option-title {
+                                        width: 120px;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    }
+
+                                    .markup-color {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .facet-title {
+                        overflow: hidden;
+
+                        &::before {
+                            display: none;
+                        }
+
+                        &::after {
+                            @include aws-icon("\f077");
+                            float: right;
+                            position: relative;
+                            top: 3px;
+                        }
+
+                        &.facet-closed {
+                            &::after {
+                                @include aws-icon("\f078");
+                            }
+                        }
+
+                        h3 {
+                            float: left;
+                        }
+                    }
+
+                    .option-title {
+                        color: $base-color;
+                    }
+                }
+
+                .facet-type-range .range-wrapper {
+                    background: #fff;
+                    border: 0;
+
+                    * {
+                        box-shadow: none;
+                        color: $font-dark;
+                    }
+
+                    .handler {
+                        .icon {
+                            @include round(100%);
+                            background-color: $font-light;
+                            width: 12px;
+                            height: 12px;
+                            border: 1px solid $gray-medium;
+                        }
+                    }
+
+                    .defined-range {
+                        background: $lighten-color;
+                    }
+
+                    .submit {
+                        @extend .btn;
+                        @extend .btn-wide;
+                        margin-top: 35px;
+                    }
+                }
+            }
+        }
+
+        .selected-facets {
+            background: $gray-extralight;
+            border: 0;
+            margin: 0;
+            @include round(2px);
+
+            &::before {
+                text-transform: uppercase;
+                font-size: 0.9em;
+            }
+
+            .selected-facet {
+                border: 0;
+                border-bottom: 1px solid $gray-light;
+                margin: 0;
+                @include round(0);
+
+                &:last-child() {
+                    border: 0;
+                }
+
+                .selected-facet-name {
+                    background: none;
+                }
+
+                ul {
+                    li {
+                        margin-top: 0;
+                        margin-bottom: 5px;
+                        border: 0;
+                        font-weight: normal;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#showFacets {
+    display: none;
+}
+
+@media screen and(max-width: 992px) {
+    #left {
+        width: 0;
+
+        &.active {
+            .wd-facet-group {
+                position: fixed;
+                top: 0;
+                right: 0;
+                z-index: 99999999;
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll;
+                overflow-x: hidden;
+                background-color: white;
+            }
+        }
+    }
+
+    #showFacets {
+        display: block;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 999999999;
+
+        &:after {
+            content: ' Filtrar';
+        }
+
+        .icon:before {
+            @include aws-icon("\f0b0");
+        }
+
+        &.active {
+            width: 80px;
+            bottom: initial;
+            top: 0;
+            background-color: transparent;
+            color: $font-dark;
+
+            &:after {
+                content: '';
+            }
+
+            .icon:before {
+                @include aws-icon("\f00d");
+                font-size: 2em;
+            }
+        }
+    }
+}
